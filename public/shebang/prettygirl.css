@@ -1,0 +1,100 @@
+/* tag selector */
+
+body {
+    height: 100%;
+    background: #ECEFF1;
+    color: rgba(0, 0, 0, 0.87);
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+b {
+    color: #ffa100;
+}
+
+.split {
+    /* Full height */
+    height: 70vh;
+    position: relative;
+}
+
+
+/* id and under id selector */
+
+#welcome {
+    background: white;
+    max-width: 360px;
+    margin: 100px auto 16px;
+    padding: 32px 24px;
+    border-radius: 3px;
+}
+
+#welcome h1 {
+    color: #ffa100;
+    font-weight: bold;
+    font-size: 22px;
+    margin: 0 0 22px;
+}
+
+#welcome h2 {
+    font-size: 16px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.6);
+    margin: 0 0 33px;
+}
+
+#welcome p {
+    line-height: 140%;
+    margin: 16px 0 24px;
+    font-size: 14px;
+}
+
+#welcome a {
+    display: block;
+    text-align: center;
+    background: #332c27;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    padding: 12px;
+    border-radius: 4px;
+}
+
+#welcome,
+#welcome a {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+#welcome #text-danger {
+    color: red;
+}
+
+#load {
+    color: rgba(0, 0, 0, 0.4);
+    font-size: 13px;
+}
+
+
+/*class selector*/
+
+.text-center {
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    body {
+        margin-top: 0;
+        background: rgb(212, 220, 224);
+        box-shadow: none;
+        border-top: 10px solid rgb(212, 220, 224);
+    }
+    #welcome {
+        margin-top: 50%;
+        margin-bottom: 50%;
+        margin-left: 3%;
+        margin-right: 3%;
+        background: white;
+        box-shadow: none;
+    }
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>init</title>
+</head>
+
+<body style="background-color:#125;">
+    <pre style="color:#fff; text-align: center; margin-top:5%;text-transform: uppercase;">
+R u tryin' to setup ur <b style="color: tomato;">linux system?</b>
+u may run this in <b style="color: teal;">terminal</b>.
+</pre>
+    <pre>
+flag : {
+    install
+}
+options : {
+    laxz        --laxz's system handler
+    de          --Gnome Desktop Enviroment
+    general     --to install general builds
+    opencv      --to install `opencv`
+    miniconda   --to install miniconda
+    <hr>
+    all     --everything (need some time!)
+}
+</pre>
+
+
+    <div style="text-align: center;">
+        <input type="text" value='sh -c "$(curl -fsSL https://raw.githubusercontent.com/minlaxz/daily-bash/master/laxz_init.sh)"' id="shellcode"></input>
+        <button onclick="copytxt()" style="color: darkorchid;">Copy</button>
+    </div>
+
+    <script>
+        function copytxt() {
+            var copyText = document.getElementById("shellcode");
+
+            /* Select the text field */
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); /*For mobile devices won't need tho*/
+
+            /* Copy the text inside the text field */
+            document.execCommand("copy");
+
+            /* Alert the copied text */
+            alert("Copied");
+        }
+    </script>
+</body>
+
+</html>
