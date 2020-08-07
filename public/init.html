@@ -5,33 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>init</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
 </head>
 
-<body style="background-color:#125;">
-    <pre style="color:#fff; text-align: center; margin-top:5%;text-transform: uppercase;">
+<body style="background-color:#125; font-family: 'Poppins', sans-serif;">
+
+    <pre style="color:#fff; text-align: center; margin-top:3%;text-transform: uppercase;">
 R u tryin' to setup ur <b style="color: tomato;">linux system?</b>
 u may run this in <b style="color: teal;">terminal</b>.
 </pre>
-    <pre>
-flag : {
-    install
-}
-options : {
-    laxz        --laxz's system handler
-    de          --Gnome Desktop Enviroment
-    general     --to install general builds
-    opencv      --to install `opencv`
-    miniconda   --to install miniconda
-    <hr>
-    all     --everything (need some time!)
-}
-</pre>
-
 
     <div style="text-align: center;">
         <input type="text" value='sh -c "$(curl -fsSL https://raw.githubusercontent.com/minlaxz/daily-bash/master/laxz_init.sh)"' id="shellcode"></input>
         <button onclick="copytxt()" style="color: darkorchid;">Copy</button>
     </div>
+
+    <pre style="color: wheat;">
+flag : {
+    install
+    uninstall
+}
+options : {
+    help        --print usage.
+    test        --to test.
+    laxz        --<laxz's> system handler
+    de          --Gnome Desktop 'Enviroment'
+    general     --to install 'general' dependencies
+    opencv      --to install 'opencv' from build
+    miniconda   --to install 'miniconda'
+    cudnn       --to install 'cudnn'
+    cuda        --to install 'cuda' from build
+    nvidia-driver
+    <hr>
+    all     --everything (need some time!)
+}
+</pre>
 
     <script>
         function copytxt() {
@@ -48,6 +56,18 @@ options : {
             alert("Copied");
         }
     </script>
+
+    <pre style="color: sienna;">
+
+    Always examine scripts downloaded from \
+    the internet before running them locally.
+    <a href="https://raw.githubusercontent.com/minlaxz/daily-bash/master/laxz_init.sh" style="color: beige;">init.sh</a>
+    <a href="https://raw.githubusercontent.com/minlaxz/daily-bash/master/laxz_autoconfig.sh" style="color: beige;">config.sh</a>
+
+    </pre>
 </body>
+<footer style="text-align: center;">
+    maintined by @minlaxz
+</footer>
 
 </html>
