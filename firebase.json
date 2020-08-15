@@ -1,17 +1,15 @@
 {
-  "hosting": {
-    "site": "minlaxz",
-    "public": "public",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "/shebang{,/**}",
-        "destination": "index.html"
-      }
-    ]
-  }
+    "hosting": {
+        "site": "daemon-laxz",
+        "public": "public",
+        "ignore": [
+            "firebase.json",
+            "**/.*",
+            "**/node_modules/**"
+        ],
+        "rewrites": [{
+            "source": "**",
+            "destination": "index.html"
+        }]
+    }
 }
