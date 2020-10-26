@@ -4,48 +4,157 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> -->
-    <title>yoh! Min Latt</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>yoh! 🦄</title>
 
-    <!-- update the version number as needed -->
+<!-- update the version number as needed for Firebase-->
     <script defer src="/__/firebase/7.14.5/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
     <script defer src="/__/firebase/7.14.5/firebase-database.js"></script>
     <script defer src="/__/firebase/7.14.5/firebase-auth.js"></script>
-    <!--
-    <script defer src="/__/firebase/7.14.5/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/7.14.5/firebase-storage.js"></script> -->
-    <!-- initialize the SDK after all desired features are loaded -->
     <script defer src="/__/firebase/init.js"></script>
-    <link media="screen" rel="stylesheet" href="./shebang/prettygirl.css">
 
+<!-- fonts. -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave&display=swap" rel="stylesheet">
+
+<!-- react goes here. -->
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+<!-- onesignal TODO firebase cloud messaging.--> 
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+    <script>
+        window.OneSignal = window.OneSignal || [];
+        OneSignal.push(function () {
+            OneSignal.init({
+                appId: "99f2419c-bf2d-44a3-b351-d0c22a02ce03",
+                notifyButton: {
+                    enable: true,
+                },
+            });
+        });
+    </script>
+
+<!-- custom used font : JetbrainMono-->
+    <style>
+        @font-face {
+            font-family: JetbrainMono;
+            src: url(./fonts/woff/JetBrainsMono-Regular.woff);
+        }
+
+        @media screen and (max-width: 1600px) {
+            img.resize {
+                max-width: 20%;
+                max-width: 20%;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            img.resize {
+                max-width: 50%;
+                max-height: 50%;
+            }
+        }
+    </style>
 </head>
 
 <body>
+    <!-- navigation bar -->
+    <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light" style="color:cornsilk;">
+        <a class="navbar-brand" href="#" style="font-family: 'Roboto';">Hey, Super Welcome! 🦄 </a>
+    </nav>
 
-    <div class="split">
-        <div id="welcome">
-            <h1>Welcome</h1>
-            <h2> Hello there, I am Min 🔥🔥🔥🔥 . </h2>
-            <p id="text-danger" class="text-center"> Hosted with &hearts; on <b>Firebase</b></p>
-            <a href="./init.html" target="_">sys init</a>
-        </div>
-
+    <!-- my image -->
+    <div class="text-center">
+        <img src="./imgs/me3.JPG" class="rounded img-thumbnail resize" alt="No! I am a man">
     </div>
 
-    <div class="split">
-        <div id="welcome">
-            <h1>Welcome</h1>
-            <h2> Hello there, I am Min 🔥🔥🔥🔥 . </h2>
-            <p id="text-danger" class="text-center"> Hosted with &hearts; on <b>Firebase</b></p>
-            <a href="https://github.com/minlaxz" target="_blank">Imma Github</a>
+    <!-- those stuff goes here. -->
+    <div class="row">
+        <div id="whoami" class="container">
+            <p
+                style="font-family: 'Sedgwick Ave', cursive; font-size: x0-large; font-weight: bold;padding-left: 5%; text-align:justify; margin-top: 5%;">
+                Who am i 🤔 ?
+            </p>
+            <p style="font-family: 'Poppins'; padding-left: 15%;">
+                Hi, am <b style="color: cyan;">Min Latt</b>, from Myanmar.🇲🇲 <br>
+                Background 📑, B.E. EC <a href="http://www.ttu.edu.mm/">(@TTU)</a><br>
+                Programmings <code>Python 🐍, C 🤔 </code>. <br>
+                Also <code>Web 🕸, Bash, Etc..</code>
+            </p>
+        </div>
+    </div>
+
+    <hr>
+    <div id="currentlyworkingon" class="container">
+        <p
+            style="font-family: 'Sedgwick Ave', cursive; font-size: x0-large; font-weight: bold;padding-left: 5%; text-align:justify;">
+            Currently working on 🔭 ?
+        </p>
+        <p style="font-family: 'Poppins'; padding-left: 15%;">
+            👌, here's my <a href="https://github.com/minlaxz">Github</a>.
+        </p>
+    </div>
+    <hr>
+    <div id="lxz" class="container">
+        <p
+            style="font-family: 'Sedgwick Ave', cursive; font-size: x0-large; font-weight: bold;padding-left: 5%; text-align:justify;">
+            And This is 🔥🔥
+        </p>
+        <p style="font-family: 'Poppins'; padding-left: 15%;">
+            my linux setup script <a href="./init.html" class="btn btn-outline-primary btn-sm">imma 👻</a> !
+        </p>
+
+    </div>
+    <hr>
+    <div id="famous" class="container">
+        <p
+            style="font-family: 'Sedgwick Ave', cursive; font-size: x0-large; font-weight: bold;padding-left: 5%; text-align:justify;">
+            My onosecond 🥴
+        </p>
+        <p style="font-family: 'Poppins'; padding-left: 15%;">
+            <code>Flase <br>
+                #include &lt;studio.h&gt;" 
+            </code>
+        </p>
+    </div>
+    <hr>
+
+    <div id="famous" class="container">
+        <p
+            style="font-family: 'Sedgwick Ave', cursive; font-size: x0-large; font-weight: bold;padding-left: 5%; text-align:justify;">
+            My Fav Person
+        </p>
+        <p style="font-family: 'Poppins'; padding-left: 15%;">
+            <a href="https://www.tomscott.com/">Tom Scott</a>
+        </p>
+    </div>
+
+    <hr>
+    <div class="row sticky-bottom text-center" style="font-family: 'JetbrainMono'; font-size: small;">
+        <div class="col">
+            <p id="text-danger" class="text-center"> Hosted on <b>Firebase 😌</b></p>
+        </div>
+        <div class="col">
+            <div id="time"></div>
+        </div>
+        <div class="col">
+            <p id="load" id="text-danger">Loading&hellip;</p>
         </div>
     </div>
 
 
-    <p id="load" id="text-danger" class="text-center">Loading&hellip;</p>
-    <script src="./shebang/ghost.js"></script>
+    <script src="./scripts/oh-no.js"></script>
+
+    <script type="text/babel">
+        function tick() {
+            const element = (<h5>{new Date().toLocaleTimeString()}</h5>);
+            ReactDOM.render(element, document.getElementById('time'));
+        }
+        setInterval(tick, 1000);
+    </script>
 </body>
 
 </html>
