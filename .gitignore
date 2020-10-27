@@ -70,3 +70,5 @@ _firebaserc
 
 test.html
 test2.html
+package.json
+package-lock.json
