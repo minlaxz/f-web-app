@@ -13,3 +13,7 @@
     padding-left: 15%;
     color: #4C82A6;
 }
+
+a:active, a:link {
+    text-decoration: underline;
+  }

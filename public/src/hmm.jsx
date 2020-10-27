@@ -12,6 +12,7 @@ function Navbar(props) {
     return (
         <nav className={props.navclass} style={{backgroundColor:'#F5F5F5'}} >
             <a id='timenav' className="navbar-brand" href="#" style={{ fontFamily: 'Roboto', fontWeight: 'bold', color: '#445159' }}>
+            <ClockWithNavBrand />
             </a>
         </nav>
     );
@@ -20,7 +21,9 @@ function Navbar(props) {
 function MeWithBaganCity(props) {
     return (
         <div className="text-center">
-                <p style={{fontSize:'10px', color: '#294659' }}> React only update what it's needed to be.</p>
+                <p style={{fontSize:'10px', color: '#294659' }}> 
+                    React's State and Lifecycle. <a href='https://reactjs.org/docs/state-and-lifecycle.html'>Learn More</a>
+                </p>
             <img className="resize rounded img-thumbnail"
                 src={props.myimgsrc}
                 alt={text.imgalt}/>
@@ -51,7 +54,7 @@ function CurrentlyWorkingOn() {
 function AndThisIs(){
     return (
         <p className='card-body'>
-            my linux setup script <a href="./init.html" className="btn btn-outline-primary btn-sm">imma 👻</a> !
+            my linux setup script 👻 <a href="./init.html" > view </a> !
         </p>
     )
 }
@@ -150,11 +153,41 @@ function Bottom(){
     );
 }
 
+class ClockWithNavBrand extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {date : new Date()};
+    }
+
+    componentDidMount () {
+        this.timerID = setInterval(
+            () => { this.tick(), 1000}
+        );
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.timerID);
+    }
+
+    tick() {
+        this.setState({
+            date : new Date()
+        });
+    }
+
+    render() {
+        return (
+            <p>
+                {text.nav} {this.state.date.toLocaleTimeString()}
+            </p>
+        )
+    }
+}
+
 function App() {
     return (
         <div style={{ backgroundColor: '#F5F5F5' }}>
             <Navbar navclass="navbar navbar-expand-lg navbar-light sticky-top" /> 
-            {/* sticky-top vs fixed-top */}
             <MeWithBaganCity myimgsrc="./imgs/me3.JPG" />
             <CardStack />
             <Bottom />
@@ -162,12 +195,14 @@ function App() {
     );
 }
 
+
+
 ReactDOM.render(
     <App />, document.getElementById('root')
 );
 
-function tick() {
-    const e = (<p>{text.nav} {new Date().toLocaleTimeString()}</p>);
-    ReactDOM.render(e, document.getElementById('timenav'));
-}
-setInterval(tick, 1000);
+// function tick() {
+//     const e = (<p>{text.nav} {new Date().toLocaleTimeString()}</p>);
+//     ReactDOM.render(e, document.getElementById('timenav'));
+// }
+// setInterval(tick, 1000);

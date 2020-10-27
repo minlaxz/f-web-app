@@ -1,3 +1,11 @@
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 var text = {
     nav: "🦄 Super Welcome!",
     imgalt: "I am from Myanmar.",
@@ -12,7 +20,11 @@ function Navbar(props) {
     return React.createElement(
         "nav",
         { className: props.navclass, style: { backgroundColor: '#F5F5F5' } },
-        React.createElement("a", { id: "timenav", className: "navbar-brand", href: "#", style: { fontFamily: 'Roboto', fontWeight: 'bold', color: '#445159' } })
+        React.createElement(
+            "a",
+            { id: "timenav", className: "navbar-brand", href: "#", style: { fontFamily: 'Roboto', fontWeight: 'bold', color: '#445159' } },
+            React.createElement(ClockWithNavBrand, null)
+        )
     );
 }
 
@@ -23,7 +35,12 @@ function MeWithBaganCity(props) {
         React.createElement(
             "p",
             { style: { fontSize: '10px', color: '#294659' } },
-            " React only update what it's needed to be."
+            "React's State and Lifecycle. ",
+            React.createElement(
+                "a",
+                { href: "https://reactjs.org/docs/state-and-lifecycle.html" },
+                "Learn More"
+            )
         ),
         React.createElement("img", { className: "resize rounded img-thumbnail",
             src: props.myimgsrc,
@@ -84,11 +101,11 @@ function AndThisIs() {
     return React.createElement(
         "p",
         { className: "card-body" },
-        "my linux setup script ",
+        "my linux setup script \uD83D\uDC7B ",
         React.createElement(
             "a",
-            { href: "./init.html", className: "btn btn-outline-primary btn-sm" },
-            "imma \uD83D\uDC7B"
+            { href: "./init.html" },
+            " view "
         ),
         " !"
     );
@@ -212,6 +229,55 @@ function Bottom() {
     );
 }
 
+var ClockWithNavBrand = function (_React$Component) {
+    _inherits(ClockWithNavBrand, _React$Component);
+
+    function ClockWithNavBrand(props) {
+        _classCallCheck(this, ClockWithNavBrand);
+
+        var _this = _possibleConstructorReturn(this, (ClockWithNavBrand.__proto__ || Object.getPrototypeOf(ClockWithNavBrand)).call(this, props));
+
+        _this.state = { date: new Date() };
+        return _this;
+    }
+
+    _createClass(ClockWithNavBrand, [{
+        key: "componentDidMount",
+        value: function componentDidMount() {
+            var _this2 = this;
+
+            this.timerID = setInterval(function () {
+                _this2.tick(), 1000;
+            });
+        }
+    }, {
+        key: "componentWillUnmount",
+        value: function componentWillUnmount() {
+            clearInterval(this.timerID);
+        }
+    }, {
+        key: "tick",
+        value: function tick() {
+            this.setState({
+                date: new Date()
+            });
+        }
+    }, {
+        key: "render",
+        value: function render() {
+            return React.createElement(
+                "p",
+                null,
+                text.nav,
+                " ",
+                this.state.date.toLocaleTimeString()
+            );
+        }
+    }]);
+
+    return ClockWithNavBrand;
+}(React.Component);
+
 function App() {
     return React.createElement(
         "div",
@@ -225,14 +291,8 @@ function App() {
 
 ReactDOM.render(React.createElement(App, null), document.getElementById('root'));
 
-function tick() {
-    var e = React.createElement(
-        "p",
-        null,
-        text.nav,
-        " ",
-        new Date().toLocaleTimeString()
-    );
-    ReactDOM.render(e, document.getElementById('timenav'));
-}
-setInterval(tick, 1000);
+// function tick() {
+//     const e = (<p>{text.nav} {new Date().toLocaleTimeString()}</p>);
+//     ReactDOM.render(e, document.getElementById('timenav'));
+// }
+// setInterval(tick, 1000);
