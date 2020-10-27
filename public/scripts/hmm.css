@@ -1,0 +1,15 @@
+.card-head {
+    font-family: 'Sedgwick Ave', cursive; 
+    font-size: x0-large; 
+    font-weight: bold;
+    padding-left: 5%; 
+    text-align:justify; 
+    margin-top: 5%;
+    color: #294659;
+}
+
+.card-body {
+    font-family: 'Poppins'; 
+    padding-left: 15%;
+    color: #4C82A6;
+}
