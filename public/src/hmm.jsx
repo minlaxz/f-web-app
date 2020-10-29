@@ -11,7 +11,7 @@ const text = {
 function Navbar(props) {
     return (
         <nav className={props.navclass} style={{backgroundColor:'#F5F5F5'}} >
-            <a id='timenav' className="navbar-brand" href="#" style={{ fontFamily: 'Roboto', fontWeight: 'bold', color: '#445159' }}>
+            <a id='timenav' className="navbar-brand" style={{ fontFamily: 'Roboto', fontWeight: 'bold', color: '#445159' }}>
             <ClockWithNavBrand />
             </a>
         </nav>
@@ -87,23 +87,18 @@ function CardBody(props) {
     switch (props.flag) {
         case 'whoami': {
             return <Whoami />
-            break;
         }
         case 'currentlyworkingon': {
             return <CurrentlyWorkingOn />
-            break;
         }
         case 'andthisis' : {
             return <AndThisIs />
-            break;
         }
         case 'myonosecond' : {
             return <MyOnoSecond />
-            break;
         }
         case 'favperson' : {
             return <FavPerson />
-            break;
         }
         default: {
             return (
@@ -196,13 +191,12 @@ function App() {
 }
 
 
-
 ReactDOM.render(
     <App />, document.getElementById('root')
 );
 
-// function tick() {
-//     const e = (<p>{text.nav} {new Date().toLocaleTimeString()}</p>);
+// function Tick(props) {
+//     const e = (<p>{}</p>);
 //     ReactDOM.render(e, document.getElementById('timenav'));
 // }
-// setInterval(tick, 1000);
+// setInterval(Tick, 1000);

@@ -22,7 +22,7 @@ function Navbar(props) {
         { className: props.navclass, style: { backgroundColor: '#F5F5F5' } },
         React.createElement(
             "a",
-            { id: "timenav", className: "navbar-brand", href: "#", style: { fontFamily: 'Roboto', fontWeight: 'bold', color: '#445159' } },
+            { id: "timenav", className: "navbar-brand", style: { fontFamily: 'Roboto', fontWeight: 'bold', color: '#445159' } },
             React.createElement(ClockWithNavBrand, null)
         )
     );
@@ -152,27 +152,22 @@ function CardBody(props) {
         case 'whoami':
             {
                 return React.createElement(Whoami, null);
-                break;
             }
         case 'currentlyworkingon':
             {
                 return React.createElement(CurrentlyWorkingOn, null);
-                break;
             }
         case 'andthisis':
             {
                 return React.createElement(AndThisIs, null);
-                break;
             }
         case 'myonosecond':
             {
                 return React.createElement(MyOnoSecond, null);
-                break;
             }
         case 'favperson':
             {
                 return React.createElement(FavPerson, null);
-                break;
             }
         default:
             {
@@ -291,8 +286,8 @@ function App() {
 
 ReactDOM.render(React.createElement(App, null), document.getElementById('root'));
 
-// function tick() {
-//     const e = (<p>{text.nav} {new Date().toLocaleTimeString()}</p>);
+// function Tick(props) {
+//     const e = (<p>{}</p>);
 //     ReactDOM.render(e, document.getElementById('timenav'));
 // }
-// setInterval(tick, 1000);
+// setInterval(Tick, 1000);
