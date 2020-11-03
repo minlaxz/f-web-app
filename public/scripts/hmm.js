@@ -44,11 +44,13 @@ function MeWithBaganCity(props) {
         ),
         React.createElement("img", { className: "resize rounded img-thumbnail",
             src: props.myimgsrc,
-            alt: text.imgalt }),
+            alt: text.imgalt,
+            draggable: false
+        }),
         React.createElement(
             "p",
             { style: { fontSize: '10px' } },
-            " @Bagan "
+            " @Bagan Myanmar "
         )
     );
 }

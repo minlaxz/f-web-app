@@ -26,8 +26,10 @@ function MeWithBaganCity(props) {
                 </p>
             <img className="resize rounded img-thumbnail"
                 src={props.myimgsrc}
-                alt={text.imgalt}/>
-                <p style={{ fontSize: '10px' }}> @Bagan </p>
+                alt={text.imgalt}
+                draggable={false}
+                />
+                <p style={{ fontSize: '10px' }}> @Bagan Myanmar </p>
         </div>
     );
 }
