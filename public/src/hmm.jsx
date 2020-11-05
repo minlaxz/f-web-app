@@ -37,7 +37,7 @@ function MeWithBaganCity(props) {
 function Whoami() {
     return (
         <p className="card-body">
-            Hi, am <b style={{ color: 'cyan' }}>Min Latt</b> , from Myanmar.🇲🇲
+            Hi, am <b style={{ color: 'black' }}>Min Latt</b> , from Myanmar.🇲🇲
             Background 📑, B.E. EC <a href="http://www.ttu.edu.mm/">(@TTU)</a>
             Programmings <code>Python 🐍, C 🤔 </code>.
             Also <code>Web 🕸, Bash, Etc..</code>

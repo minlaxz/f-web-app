@@ -62,7 +62,7 @@ function Whoami() {
         "Hi, am ",
         React.createElement(
             "b",
-            { style: { color: 'cyan' } },
+            { style: { color: 'black' } },
             "Min Latt"
         ),
         " , from Myanmar.\uD83C\uDDF2\uD83C\uDDF2 Background \uD83D\uDCD1, B.E. EC ",
