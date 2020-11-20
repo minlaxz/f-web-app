@@ -21,25 +21,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave&display=swap" rel="stylesheet">
 
     <!-- react and JSX goes here. -->
-    <!-- <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>-->
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <!-- <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script> -->
 
-    <!-- onesignal TODO firebase cloud messaging.-->
-    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-    <script>
-        window.OneSignal = window.OneSignal || [];
-        OneSignal.push(function () {
-            OneSignal.init({
-                appId: "99f2419c-bf2d-44a3-b351-d0c22a02ce03",
-                notifyButton: {
-                    enable: true,
-                },
-            });
-        });
-    </script>
+    <!-- TODO firebase cloud messaging.-->
 
     <link rel="stylesheet" href="./scripts/hmm.css">
 
@@ -52,15 +40,15 @@
 
         @media screen and (max-width: 1600px) {
             img.resize {
-                max-width: 15%;
-                max-width: 15%;
+                max-width: 50%;
+                max-width: 50%;
             }
         }
 
         @media screen and (max-width: 600px) {
             img.resize {
-                max-width: 50%;
-                max-height: 50%;
+                max-width: 100%;
+                max-height: 100%;
             }
         }
     </style>
@@ -68,38 +56,61 @@
 </head>
 
 <body>
-    <div id="root"></div>
-    <script src="./scripts/hmm.js" type="text/babel"> </script>
-    <!-- <pre>
-TODO
-add firebase-auth
-add github commits summary
-</pre> -->
-    <p class="card-header text-center" style="font-weight: bold;">
-        Github Gists
-    </p>
+    <div id="root"> </div>
+    <script src="./scripts/hmm.js" type="text/Javascript"> </script>
 
 
     <div id="gists" class="container">
-        <span class="text-danger"> Netcat </span>
-        <script src="https://gist.github.com/minlaxz/2782a783ff853ebf042ccc48d81e56c6.js"></script>
-        <span class="text-danger"> SSH </span>
-        <script src="https://gist.github.com/minlaxz/58ec668aa84afa54bdf0a90b5ffab8e1.js"></script>
-        <span class="text-danger"> SSH & Netcat </span>
-        <script src="https://gist.github.com/minlaxz/d2e454317a64d24287bd104d864d6c09.js"></script>
-        <span class="text-danger"> Docker Tensorflow GPUs </span>
-        <script src="https://gist.github.com/minlaxz/ab10afa935fc97fe264b08e50f5540ea.js"></script>
-        <span class="text-danger"> Systemd </span>
-        <script src="https://gist.github.com/minlaxz/2124955d434c5c1c79980871c48273ba.js"></script>
-        <span class="text-danger"> Modern Javascript </span>
-        <script src="https://gist.github.com/minlaxz/0539c62f6782f351d89edc0fc3254f99.js"></script>
-        <span class="text-danger"> Minification </span>
-        <script src="https://gist.github.com/minlaxz/50302805c65d8779b6bd3c9e7e9e3f1d.js"></script>
-        <span class="text-danger"> curl </span>
-        <script src="https://gist.github.com/minlaxz/07a0c9553741f9a5672745ad310ba58b.js"></script>
+        <div class="row justify-content-md-center">
+            <div class="col-md-6">
+                <span class="text-danger font-weight-bold"> Netcat </span>
+                <script src="https://gist.github.com/minlaxz/2782a783ff853ebf042ccc48d81e56c6.js"></script>
+            </div>
+            <div class="col-md-6">
+                <span class="text-danger font-weight-bold"> SSH </span>
+                <script src="https://gist.github.com/minlaxz/58ec668aa84afa54bdf0a90b5ffab8e1.js"></script>
+            </div>
+        </div>
+
+        <div class="row justify-content-md-center">
+            <div class="col-md-6">
+                <span class="text-danger font-weight-bold"> SSH & Netcat </span>
+                <script src="https://gist.github.com/minlaxz/d2e454317a64d24287bd104d864d6c09.js"></script>
+            </div>
+            <div class="col-md-6">
+                <span class="text-danger font-weight-bold"> Docker Tensorflow GPUs </span>
+                <script src="https://gist.github.com/minlaxz/ab10afa935fc97fe264b08e50f5540ea.js"></script>
+            </div>
+        </div>
+
+        <div class="row justify-content-md-center">
+            <div class="col-md-6">
+                <span class="text-danger font-weight-bold"> Systemd </span>
+                <script src="https://gist.github.com/minlaxz/2124955d434c5c1c79980871c48273ba.js"></script>
+            </div>
+            <div class="col-md-6">
+                <span class="text-danger font-weight-bold"> Modern Javascript </span>
+                <script src="https://gist.github.com/minlaxz/0539c62f6782f351d89edc0fc3254f99.js"></script>
+            </div>
+        </div>
+
+        <div class="row justify-content-md-center">
+            <div class="col-md-6">
+                <span class="text-danger font-weight-bold"> Minification </span>
+                <script src="https://gist.github.com/minlaxz/50302805c65d8779b6bd3c9e7e9e3f1d.js"></script>
+            </div>
+            <div class="col-md-6">
+                <span class="text-danger font-weight-bold"> curl </span>
+                <script src="https://gist.github.com/minlaxz/07a0c9553741f9a5672745ad310ba58b.js"></script>
+            </div>
+        </div>
     </div>
 
-
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('DOM_loaded.')            
+        });
+    </script>
 </body>
 
 </html>

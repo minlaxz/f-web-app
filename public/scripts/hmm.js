@@ -6,239 +6,36 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var text = {
-    nav: "🦄 Super Welcome!",
-    imgalt: "I am from Myanmar.",
-    head1: "who am i : ",
-    head2: "Currently working on 🔭 ?",
-    head3: "And this is 🔥🔥 .., Fire",
-    head4: "My onosecond 🥴",
-    head5: "My fav person"
-};
-
-function Navbar(props) {
+function Navbar() {
     return React.createElement(
         "nav",
-        { className: props.navclass, style: { backgroundColor: '#F5F5F5' } },
+        {
+            className: "navbar navbar-expand-sm navbar-light sticky-top",
+            style: { backgroundColor: '#F5F5F5' } },
         React.createElement(
             "a",
-            { id: "timenav", className: "navbar-brand", style: { fontFamily: 'Roboto', fontWeight: 'bold', color: '#445159' } },
-            React.createElement(ClockWithNavBrand, null)
-        )
-    );
-}
-
-function MeWithBaganCity(props) {
-    return React.createElement(
-        "div",
-        { className: "text-center" },
-        React.createElement(
-            "p",
-            { style: { fontSize: '10px', color: '#294659' } },
-            "React's State and Lifecycle. ",
-            React.createElement(
-                "a",
-                { href: "https://reactjs.org/docs/state-and-lifecycle.html" },
-                "Learn More"
-            )
-        ),
-        React.createElement("img", { className: "resize rounded img-thumbnail",
-            src: props.myimgsrc,
-            alt: text.imgalt,
-            draggable: false
-        }),
-        React.createElement(
-            "p",
-            { style: { fontSize: '10px' } },
-            " @Bagan Myanmar "
-        )
-    );
-}
-
-function Whoami() {
-    return React.createElement(
-        "p",
-        { className: "card-body" },
-        "Hi, am ",
-        React.createElement(
-            "b",
-            { style: { color: 'black' } },
-            "Min Latt"
-        ),
-        " , from Myanmar.\uD83C\uDDF2\uD83C\uDDF2 Background \uD83D\uDCD1, B.E. EC ",
-        React.createElement(
-            "a",
-            { href: "http://www.ttu.edu.mm/" },
-            "(@TTU)"
-        ),
-        "Programmings ",
-        React.createElement(
-            "code",
-            null,
-            "Python \uD83D\uDC0D, C \uD83E\uDD14 "
-        ),
-        ". Also ",
-        React.createElement(
-            "code",
-            null,
-            "Web \uD83D\uDD78, Bash, Etc.."
-        )
-    );
-}
-
-function CurrentlyWorkingOn() {
-    return React.createElement(
-        "p",
-        { className: "card-body" },
-        "\uD83D\uDC4C, here's my ",
-        React.createElement(
-            "a",
-            { href: "https://github.com/minlaxz" },
-            "Github"
-        )
-    );
-}
-
-function AndThisIs() {
-    return React.createElement(
-        "p",
-        { className: "card-body" },
-        "my linux setup script \uD83D\uDC7B ",
-        React.createElement(
-            "a",
-            { href: "./init.html" },
-            " view "
-        ),
-        " !"
-    );
-}
-
-function MyOnoSecond() {
-    return React.createElement(
-        "p",
-        { className: "card-body" },
-        React.createElement(
-            "code",
-            null,
-            "Flase ",
-            React.createElement("br", null),
-            "#include <studio.h>"
-        )
-    );
-}
-
-function FavPerson() {
-    return React.createElement(
-        "p",
-        { className: "card-body" },
-        React.createElement(
-            "a",
-            { href: "https://www.tomscott.com/" },
-            "Tom Scott"
-        )
-    );
-}
-
-function CardHead(props) {
-    return React.createElement(
-        "p",
-        { className: "card-head" },
-        " ",
-        props.text,
-        " "
-    );
-}
-
-function CardBody(props) {
-    switch (props.flag) {
-        case 'whoami':
             {
-                return React.createElement(Whoami, null);
-            }
-        case 'currentlyworkingon':
-            {
-                return React.createElement(CurrentlyWorkingOn, null);
-            }
-        case 'andthisis':
-            {
-                return React.createElement(AndThisIs, null);
-            }
-        case 'myonosecond':
-            {
-                return React.createElement(MyOnoSecond, null);
-            }
-        case 'favperson':
-            {
-                return React.createElement(FavPerson, null);
-            }
-        default:
-            {
-                return React.createElement(
-                    "p",
-                    null,
-                    " ",
-                    props.text,
-                    " "
-                );
-            }
-    }
-}
-
-function Card(props) {
-    return React.createElement(
-        "div",
-        { className: "container", id: props.cardId },
-        React.createElement(CardHead, { text: props.headtext }),
-        React.createElement(CardBody, { flag: props.flag })
-    );
-}
-
-function CardStack() {
-    return React.createElement(
-        "div",
-        null,
-        React.createElement(Card, { headtext: text.head1, flag: "whoami" }),
-        React.createElement(Card, { headtext: text.head2, flag: "currentlyworkingon" }),
-        React.createElement(Card, { headtext: text.head3, flag: "andthisis" }),
-        React.createElement(Card, { headtext: text.head4, flag: "myonosecond" }),
-        React.createElement(Card, { headtext: text.head5, flag: "favperson" })
-    );
-}
-
-function ButtomCol(props) {
-    return React.createElement(
-        "div",
-        { className: "col" },
-        React.createElement(
-            "p",
-            { id: props.id },
-            props.text
+                className: "navbar-brand",
+                style: { fontFamily: 'Roboto', fontWeight: 'bold', color: '#445159' }
+            },
+            React.createElement(Clock, null)
         )
     );
 }
 
-function Bottom() {
-    return React.createElement(
-        "div",
-        { className: "row text-center", style: { backgroundColor: "#F5F5F5", fontFamily: 'JetbrainMono', fontSize: 'small' } },
-        React.createElement(ButtomCol, { text: " \uD83C\uDF1D React && Babel " }),
-        React.createElement(ButtomCol, { text: "Hosted on Firebase \uD83C\uDF1A" })
-    );
-}
+var Clock = function (_React$Component) {
+    _inherits(Clock, _React$Component);
 
-var ClockWithNavBrand = function (_React$Component) {
-    _inherits(ClockWithNavBrand, _React$Component);
+    function Clock(props) {
+        _classCallCheck(this, Clock);
 
-    function ClockWithNavBrand(props) {
-        _classCallCheck(this, ClockWithNavBrand);
-
-        var _this = _possibleConstructorReturn(this, (ClockWithNavBrand.__proto__ || Object.getPrototypeOf(ClockWithNavBrand)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (Clock.__proto__ || Object.getPrototypeOf(Clock)).call(this, props));
 
         _this.state = { date: new Date() };
         return _this;
     }
 
-    _createClass(ClockWithNavBrand, [{
+    _createClass(Clock, [{
         key: "componentDidMount",
         value: function componentDidMount() {
             var _this2 = this;
@@ -265,31 +62,308 @@ var ClockWithNavBrand = function (_React$Component) {
             return React.createElement(
                 "p",
                 null,
-                text.nav,
-                " ",
+                "Welcome - ",
                 this.state.date.toLocaleTimeString()
             );
         }
     }]);
 
-    return ClockWithNavBrand;
+    return Clock;
 }(React.Component);
 
-function App() {
+// function AndThisIs(){
+//     return (
+//         <p className='card-body'>
+//             my linux setup script 👻 <a href="./init.html" > view </a> !
+//         </p>
+//     )
+// }
+
+function BottomCol(props) {
     return React.createElement(
         "div",
-        { style: { backgroundColor: '#F5F5F5' } },
-        React.createElement(Navbar, { navclass: "navbar navbar-expand-lg navbar-light sticky-top" }),
-        React.createElement(MeWithBaganCity, { myimgsrc: "./imgs/me3.JPG" }),
-        React.createElement(CardStack, null),
-        React.createElement(Bottom, null)
+        { className: props.class },
+        " ",
+        props.text,
+        " "
     );
 }
 
-ReactDOM.render(React.createElement(App, null), document.getElementById('root'));
+function BottomRow() {
+    return React.createElement(
+        "div",
+        { className: "row text-center", style: { backgroundColor: "#F5F5F5", fontFamily: 'JetbrainMono', fontSize: 'small' } },
+        React.createElement(BottomCol, { text: " \uD83C\uDF1D React && JSX ", "class": "col-md-6" }),
+        React.createElement(BottomCol, { text: "Hosted on Firebase \uD83C\uDF1A", "class": "col-md-6" }),
+        React.createElement(BottomCol, { text: "Cloudflare SSL", "class": "col" })
+    );
+}
 
-// function Tick(props) {
-//     const e = (<p>{}</p>);
-//     ReactDOM.render(e, document.getElementById('timenav'));
-// }
-// setInterval(Tick, 1000);
+var Toggle = function (_React$Component2) {
+    _inherits(Toggle, _React$Component2);
+
+    function Toggle(props) {
+        _classCallCheck(this, Toggle);
+
+        var _this3 = _possibleConstructorReturn(this, (Toggle.__proto__ || Object.getPrototypeOf(Toggle)).call(this, props));
+
+        _this3.state = {
+            hide: false
+        };
+        _this3.handleClick = _this3.handleClick.bind(_this3);
+        return _this3;
+    }
+
+    _createClass(Toggle, [{
+        key: "handleClick",
+        value: function handleClick() {
+            this.setState(function (prev) {
+                return {
+                    hide: !prev.hide
+                };
+            });
+            document.getElementById('gists').hidden = this.state.hide;
+            document.getElementById('root').hidden = !this.state.hide;
+        }
+    }, {
+        key: "render",
+        value: function render() {
+            return React.createElement(
+                "button",
+                {
+                    onClick: this.handleClick,
+                    className: "btn btn-outline-primary btn-sm"
+                },
+                this.state.hide ? 'Hide Gists!' : 'View My Gists!'
+            );
+        }
+    }]);
+
+    return Toggle;
+}(React.Component);
+
+function Acard(props) {
+    return React.createElement(
+        "div",
+        { className: props.class },
+        React.createElement(
+            "p",
+            { className: "card-head" },
+            " ",
+            props.headtext,
+            " "
+        ),
+        React.createElement(
+            "div",
+            { className: "card-body" },
+            " ",
+            props.bodytext,
+            " "
+        )
+    );
+}
+
+function PictureBagan(props) {
+    return React.createElement(
+        "div",
+        {
+            className: props.class
+        },
+        React.createElement(
+            "p",
+            {
+                style: { fontSize: '10px', color: '#294659' }
+            },
+            " React's State and Lifecycle.",
+            React.createElement(
+                "a",
+                {
+                    href: "https://reactjs.org/docs/state-and-lifecycle.html"
+                },
+                "Learn More"
+            )
+        ),
+        React.createElement("img", {
+            className: "resize rounded img-thumbnail",
+            src: props.src,
+            alt: props.alt,
+            draggable: false
+        }),
+        React.createElement(
+            "p",
+            {
+                style: { fontSize: '10px' }
+            },
+            " @Bagan Myanmar "
+        )
+    );
+}
+
+function UniqueRow() {
+    return React.createElement(
+        "div",
+        { className: "container row" },
+        React.createElement(PictureBagan, {
+            src: "./imgs/me3.JPG",
+            alt: "from Bagan@Myanmar.",
+            "class": "col-6 col-md-4 text-center" }),
+        React.createElement(Acard, {
+            "class": "col-12 col-md-8",
+            headtext: "who : ",
+            bodytext: ["I am ", React.createElement(
+                "b",
+                {
+                    key: "name",
+                    style: { color: 'black', fontWeight: 'bolder' }
+                },
+                " Min Latt "
+            ), React.createElement(
+                "a",
+                {
+                    key: "github",
+                    href: "https://githun.com/minlaxz"
+                },
+                "(minlaxz)"
+            ), " from ", React.createElement(
+                "a",
+                {
+                    key: "mmwiki",
+                    href: "https://en.wikipedia.org/wiki/Myanmar"
+                },
+                "Myanmar"
+            ), " 🇲🇲 (Burma).", React.createElement(
+                "ul",
+                { key: "ul_bg" },
+                React.createElement(
+                    "li",
+                    { key: "ttu" },
+                    "Background : B.E(EC) ",
+                    React.createElement(
+                        "a",
+                        { href: "http://www.ttu.edu.mm/" },
+                        "(@TTU)"
+                    ),
+                    " "
+                ),
+                React.createElement(
+                    "li",
+                    { key: "pgrm" },
+                    "Programming : (Javascript, Python, Reactjs, React-native)"
+                )
+            )]
+        })
+    );
+}
+
+function NextRow(props) {
+    return React.createElement(
+        "div",
+        { className: "row" },
+        React.createElement(Acard, {
+            "class": "col-md-6 ",
+            headtext: props.headtext1,
+            bodytext: props.bodytext1
+        }),
+        React.createElement(Acard, {
+            "class": "col-md-6 ",
+            headtext: props.headtext2,
+            bodytext: props.bodytext2
+        })
+    );
+}
+
+function Root() {
+    return React.createElement(
+        "div",
+        { style: { backgroundColor: '#F5F5F5' } },
+        React.createElement(Navbar, null),
+        React.createElement(UniqueRow, null),
+        React.createElement(NextRow, {
+            headtext1: "Currently Working On",
+            bodytext1: [React.createElement(
+                "a",
+                {
+                    key: "a",
+                    href: "https://github.com/minlaxz/scripts" },
+                " dklaxz "
+            ), "(Docker)"],
+            headtext2: "My Hubs",
+            bodytext2: [React.createElement(
+                "ul",
+                { key: "b" },
+                React.createElement(
+                    "li",
+                    null,
+                    React.createElement(
+                        "a",
+                        { key: "github", href: "https://github.com/minlaxz" },
+                        " minlaxz@Github "
+                    )
+                ),
+                React.createElement(
+                    "li",
+                    null,
+                    React.createElement(
+                        "a",
+                        { key: "dockerhub", href: "https://hub.docker.com/u/minlaxz" },
+                        " minlaxz@Dockerhub "
+                    )
+                ),
+                React.createElement(
+                    "li",
+                    null,
+                    React.createElement(
+                        "a",
+                        { key: "pypihub", href: "https://pypi.org/user/minlaxz/" },
+                        " minlaxz@PyPI "
+                    )
+                )
+            )]
+        }),
+        React.createElement(NextRow, {
+            headtext1: "Some Juice.",
+            bodytext1: [React.createElement(
+                "ul",
+                { key: "c" },
+                React.createElement(
+                    "li",
+                    null,
+                    React.createElement(
+                        "a",
+                        { key: "laxz-turned-god", href: "https://gd.minlaxz.me" },
+                        " laxz-turned-god "
+                    ),
+                    " \"(Google Drive)\""
+                ),
+                React.createElement(
+                    "li",
+                    null,
+                    React.createElement(
+                        "a",
+                        { key: "gh-pages", href: "https://minlaxz.github.io" },
+                        " Pages "
+                    ),
+                    " \"(Github)\""
+                )
+            )],
+            headtext2: "Some Fav Repos",
+            bodytext2: [React.createElement(
+                "ul",
+                { key: "d" },
+                React.createElement(
+                    "li",
+                    null,
+                    React.createElement(
+                        "a",
+                        { key: "grepo-1", href: "https://github.com/minlaxz/local-image-share" },
+                        " Docker-share "
+                    ),
+                    " \"(Github)\""
+                )
+            )]
+        }),
+        React.createElement(BottomRow, null)
+    );
+}
+
+ReactDOM.render(React.createElement(Root, null), document.getElementById('root'));
