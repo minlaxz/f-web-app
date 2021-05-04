@@ -273,6 +273,13 @@ function NextRow(props) {
 }
 
 function Root() {
+    var si = require('systeminformation');
+    si.cpu().then(function (data) {
+        return console.log(data);
+    }).catch(function (error) {
+        return console.error(error);
+    });
+    console.log("Hey");
     return React.createElement(
         "div",
         { style: { backgroundColor: '#F5F5F5' } },
@@ -314,8 +321,8 @@ function Root() {
                     null,
                     React.createElement(
                         "a",
-                        { key: "pypihub", href: "https://pypi.org/user/minlaxz/" },
-                        " minlaxz@PyPI "
+                        { key: "pypihub", href: "https://pypi.com/minlaxz" },
+                        " minlaxz@pypi "
                     )
                 )
             )]

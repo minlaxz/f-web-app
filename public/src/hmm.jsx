@@ -182,6 +182,11 @@ function NextRow(props) {
 }
 
 function Root() {
+    const si = require('systeminformation');
+    si.cpu()
+        .then(data => console.log(data))
+        .catch(error => console.error(error));
+    console.log("Hey")
     return (
         <div style={{ backgroundColor: '#F5F5F5' }}>
             <Navbar />
@@ -189,10 +194,10 @@ function Root() {
             <NextRow
                 headtext1="Currently Working On"
                 bodytext1={[
-                    <a 
-                        key="a" 
+                    <a
+                        key="a"
                         href="https://github.com/minlaxz/scripts"> dklaxz </a>, "(Docker)"
-                    ]}
+                ]}
                 headtext2="My Hubs"
                 bodytext2={[
                     <ul key='b'>
@@ -224,7 +229,7 @@ function Root() {
 
                 ]}
                 headtext2="Some Fav Repos"
-                bodytext2 = {[
+                bodytext2={[
                     <ul key='d'>
                         <li>
                             <a key="grepo-1" href="https://github.com/minlaxz/local-image-share"> Docker-share </a> "(Github)"
