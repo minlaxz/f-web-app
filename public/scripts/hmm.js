@@ -11,12 +11,12 @@ function Navbar() {
         "nav",
         {
             className: "navbar navbar-expand-sm navbar-light sticky-top",
-            style: { backgroundColor: '#F5F5F5' } },
+            style: { backgroundColor: '#1b1b1b' } },
         React.createElement(
             "a",
             {
                 className: "navbar-brand",
-                style: { fontFamily: 'Roboto', fontWeight: 'bold', color: '#445159' }
+                style: { fontFamily: 'Roboto', fontWeight: 'bold', color: '#FC3158' }
             },
             React.createElement(Clock, null)
         )
@@ -92,7 +92,7 @@ function BottomCol(props) {
 function BottomRow() {
     return React.createElement(
         "div",
-        { className: "row text-center", style: { backgroundColor: "#F5F5F5", fontFamily: 'JetbrainMono', fontSize: 'small' } },
+        { className: "row text-center", style: { backgroundColor: "#1b1b1b", color: "#fff", fontFamily: 'JetbrainMono', fontSize: 'small' } },
         React.createElement(BottomCol, { text: " \uD83C\uDF1D React && JSX ", "class": "col-md-6" }),
         React.createElement(BottomCol, { text: "Hosted on Firebase \uD83C\uDF1A", "class": "col-md-6" }),
         React.createElement(BottomCol, { text: "Cloudflare SSL", "class": "col" })
@@ -247,8 +247,35 @@ function UniqueRow() {
                 ),
                 React.createElement(
                     "li",
-                    { key: "pgrm" },
-                    "Programming : (Javascript, Python, Reactjs, React-native)"
+                    { key: "os" },
+                    "Fav OS : Unix-Like \uD83E\uDDE1   "
+                ),
+                React.createElement(
+                    "li",
+                    { key: "programming" },
+                    "Programming : (Python, Javascript)"
+                ),
+                React.createElement(
+                    "li",
+                    { key: "framework" },
+                    "Framework : (Django, ReactJS, React Native)"
+                ),
+                React.createElement(
+                    "li",
+                    { key: "devops" },
+                    " ",
+                    React.createElement(
+                        "a",
+                        { href: "https://docker.com" },
+                        "Docker"
+                    ),
+                    ", ",
+                    React.createElement(
+                        "a",
+                        { href: "https://www.heroku.com" },
+                        "Heroku"
+                    ),
+                    " "
                 )
             )]
         })
@@ -273,27 +300,21 @@ function NextRow(props) {
 }
 
 function Root() {
-    var si = require('systeminformation');
-    si.cpu().then(function (data) {
-        return console.log(data);
-    }).catch(function (error) {
-        return console.error(error);
-    });
     console.log("Hey");
     return React.createElement(
         "div",
-        { style: { backgroundColor: '#F5F5F5' } },
+        { style: { backgroundColor: '#1b1b1b' }, className: "container" },
         React.createElement(Navbar, null),
         React.createElement(UniqueRow, null),
         React.createElement(NextRow, {
-            headtext1: "Currently Working On",
+            headtext1: "my daily helper module",
             bodytext1: [React.createElement(
                 "a",
                 {
                     key: "a",
-                    href: "https://github.com/minlaxz/scripts" },
-                " dklaxz "
-            ), "(Docker)"],
+                    href: "https://github.com/minlaxz/py-laxz" },
+                " pylaxz "
+            ), "(Github)"],
             headtext2: "My Hubs",
             bodytext2: [React.createElement(
                 "ul",
@@ -322,13 +343,13 @@ function Root() {
                     React.createElement(
                         "a",
                         { key: "pypihub", href: "https://pypi.com/minlaxz" },
-                        " minlaxz@pypi "
+                        " minlaxz@Pypi "
                     )
                 )
             )]
         }),
         React.createElement(NextRow, {
-            headtext1: "Some Juice.",
+            headtext1: "Other Sites.",
             bodytext1: [React.createElement(
                 "ul",
                 { key: "c" },
@@ -338,7 +359,7 @@ function Root() {
                     React.createElement(
                         "a",
                         { key: "laxz-turned-god", href: "https://gd.minlaxz.me" },
-                        " laxz-turned-god "
+                        " Streaming "
                     ),
                     " \"(Google Drive)\""
                 ),
@@ -347,10 +368,40 @@ function Root() {
                     null,
                     React.createElement(
                         "a",
-                        { key: "gh-pages", href: "https://minlaxz.github.io" },
-                        " Pages "
+                        { key: "arch-info", href: "https://arch-info.minlaxz.workers.dev/echo" },
+                        " Arch Info "
                     ),
-                    " \"(Github)\""
+                    " (\"Worker\")"
+                ),
+                React.createElement(
+                    "li",
+                    null,
+                    React.createElement(
+                        "a",
+                        { key: "notes", href: "http://pastebin-laxz.herokuapp.com/" },
+                        " Insecure Notes "
+                    ),
+                    " (\"Heroku\")"
+                ),
+                React.createElement(
+                    "li",
+                    null,
+                    React.createElement(
+                        "a",
+                        { key: "1111", href: "https://warp.minlaxz.me" },
+                        " Get Warp "
+                    ),
+                    " (\"Worker\")"
+                ),
+                React.createElement(
+                    "li",
+                    null,
+                    React.createElement(
+                        "a",
+                        { key: "gh-pages", href: "https://cdn.minlaxz.workers.dev/" },
+                        " CDN "
+                    ),
+                    " \"(Worker)\""
                 )
             )],
             headtext2: "Some Fav Repos",

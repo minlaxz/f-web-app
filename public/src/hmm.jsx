@@ -2,10 +2,10 @@ function Navbar() {
     return (
         <nav
             className="navbar navbar-expand-sm navbar-light sticky-top"
-            style={{ backgroundColor: '#F5F5F5' }} >
+            style={{ backgroundColor: '#1b1b1b' }} >
             <a
                 className="navbar-brand"
-                style={{ fontFamily: 'Roboto', fontWeight: 'bold', color: '#445159' }}
+                style={{ fontFamily: 'Roboto', fontWeight: 'bold', color: '#FC3158' }}
             >
                 <Clock />
             </a>
@@ -56,7 +56,7 @@ function BottomCol(props) {
 
 function BottomRow() {
     return (
-        <div className='row text-center' style={{ backgroundColor: "#F5F5F5", fontFamily: 'JetbrainMono', fontSize: 'small' }}>
+        <div className='row text-center' style={{ backgroundColor: "#1b1b1b",color:"#fff", fontFamily: 'JetbrainMono', fontSize: 'small' }}>
             <BottomCol text=' 🌝 React && JSX ' class='col-md-6' />
             <BottomCol text='Hosted on Firebase 🌚' class='col-md-6' />
             <BottomCol text='Cloudflare SSL' class='col' />
@@ -156,7 +156,10 @@ function UniqueRow() {
 
                     <ul key="ul_bg">
                         <li key="ttu">Background : B.E(EC) <a href="http://www.ttu.edu.mm/">(@TTU)</a> </li>
-                        <li key="pgrm">Programming : (Javascript, Python, Reactjs, React-native)</li>
+                        <li key="os">Fav OS : Unix-Like 🧡   </li>
+                        <li key="programming">Programming : (Python, Javascript)</li>
+                        <li key="framework">Framework : (Django, ReactJS, React Native)</li>
+                        <li key="devops"> <a href="https://docker.com">Docker</a>, <a href="https://www.heroku.com">Heroku</a> </li>
                     </ul>
                 ]}
             />
@@ -182,21 +185,17 @@ function NextRow(props) {
 }
 
 function Root() {
-    const si = require('systeminformation');
-    si.cpu()
-        .then(data => console.log(data))
-        .catch(error => console.error(error));
     console.log("Hey")
     return (
-        <div style={{ backgroundColor: '#F5F5F5' }}>
+        <div style={{ backgroundColor: '#1b1b1b' }} className="container">
             <Navbar />
             <UniqueRow />
             <NextRow
-                headtext1="Currently Working On"
+                headtext1="my daily helper module"
                 bodytext1={[
                     <a
                         key="a"
-                        href="https://github.com/minlaxz/scripts"> dklaxz </a>, "(Docker)"
+                        href="https://github.com/minlaxz/py-laxz"> pylaxz </a>, "(Github)"
                 ]}
                 headtext2="My Hubs"
                 bodytext2={[
@@ -208,7 +207,7 @@ function Root() {
                             <a key="dockerhub" href="https://hub.docker.com/u/minlaxz"> minlaxz@Dockerhub </a>
                         </li>
                         <li>
-                            <a key="pypihub" href="https://pypi.com/minlaxz"> minlaxz@pypi </a>
+                            <a key="pypihub" href="https://pypi.com/minlaxz"> minlaxz@Pypi </a>
                         </li>
                     </ul>
 
@@ -216,14 +215,23 @@ function Root() {
                 ]}
             />
             <NextRow
-                headtext1="Some Juice."
+                headtext1="Other Sites."
                 bodytext1={[
                     <ul key='c'>
                         <li>
-                            <a key="laxz-turned-god" href="https://gd.minlaxz.me"> laxz-turned-god </a> "(Google Drive)"
+                            <a key="laxz-turned-god" href="https://gd.minlaxz.me"> Streaming </a> "(Google Drive)"
                         </li>
                         <li>
-                            <a key="gh-pages" href="https://minlaxz.github.io"> Pages </a> "(Github)"
+                            <a key="arch-info" href="https://arch-info.minlaxz.workers.dev/echo"> Arch Info </a> ("Worker")
+                        </li>
+                        <li>
+                            <a key="notes" href="http://pastebin-laxz.herokuapp.com/"> Insecure Notes </a> ("Heroku")
+                        </li>
+                        <li>
+                            <a key="1111" href="https://warp.minlaxz.me"> Get Warp </a> ("Worker")
+                        </li>
+                        <li>
+                            <a key="gh-pages" href="https://cdn.minlaxz.workers.dev/"> CDN </a> "(Worker)"
                         </li>
                     </ul>
 

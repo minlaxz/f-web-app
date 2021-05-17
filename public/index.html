@@ -62,12 +62,25 @@
 
 </head>
 
-<body>
+<body style="background-color: #1b1b1b;">
     <div id="root"> </div>
+
     <script src="./scripts/hmm.js" type="text/Javascript"> </script>
 
+    <div class="container text-center" style="margin-top:2%; margin-bottom:2%">
+       <button class="btn btn-outline-secondary btn-sm" onclick="show(this)" >Show Gists</button> 
+    </div>
+    
 
-    <div id="gists" class="container">
+    <script>
+        const show = (e) => {
+            const gists = document.getElementById('gists')
+            gists.hidden = !gists.hidden
+            gists.hidden ? e.innerText = "Show Gists" : e.innerText = "Hide Gists"
+        }
+    </script>
+
+    <div id="gists" class="container" hidden>
         <div class="row justify-content-md-center">
             <div class="col-md-6">
                 <span class="text-danger font-weight-bold"> Netcat </span>
